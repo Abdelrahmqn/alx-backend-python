@@ -2,10 +2,11 @@
 """
 floors in python variable annotation
 """
+import math
 
 
-def floor(n: float) -> float:
+def floor(n: float) -> int:
     """
     return floats with v annts
     """
-    return int(n)
+    return math.floor(n)
