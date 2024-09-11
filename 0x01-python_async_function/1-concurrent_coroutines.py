@@ -9,8 +9,12 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     """
     wait_n function
     """
-    # for i in range(n):
-    #     i = [wait_random(max_delay)]
-    tasks = [wait_random(max_delay) for tasks in range(n)]
+    tasks = [wait_random(max_delay) for _ in range(n)]
     dels = await asyncio.gather(*tasks)
-    return dels
+    nums = []
+
+    while dels:
+        small = min(dels)
+        nums.append(small)
+        dels.remove(small)
+    return nums  # storing the values here...
