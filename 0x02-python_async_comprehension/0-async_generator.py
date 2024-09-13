@@ -5,7 +5,8 @@ import random
 import asyncio
 from typing import Generator
 
-async def async_generator() -> Generator: # type: ignore
+
+async def async_generator() -> Generator[float, None, None]:  # type: ignore
     """ async gen:
         loop 10 times; each time asynchronously wait
         one second, yield a random float num at this period
