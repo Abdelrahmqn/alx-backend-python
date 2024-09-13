@@ -3,7 +3,7 @@
 """
 from time import time
 import asyncio
-from asyncio import gather as gazzzzzzzzzzzzzzzzzzzz
+from asyncio import gather
 async_comprehension = __import__('1-async_comprehension').async_comprehension
 
 
@@ -12,6 +12,6 @@ async def measure_runtime() -> float:
     """
     for i in range(4):
         start = time()
-        await gazzzzzzzzzzzzzzzzzzzz(async_comprehension())
+        await gather(async_comprehension())
         after = time()
         return (after - start)
